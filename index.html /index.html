@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housing Price Index Dashboard</title>
+  
+  <!-- CDN Scripts for Plotting & CSV Parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #1e293b;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+    nav a.active, nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .hero-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .chart-container {
+      position: relative;
+      height: 480px;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .stats-badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #334155;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Housing Price Index</h2>
+    <nav>
+      <a href="index.html" class="active">Overview</a>
+      <a href="exploration.html">Market Explorer</a>
+      <a href="story.html">Story Narrative</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero-card">
+      <span class="stats-badge" id="data-count">Loading dataset...</span>
+      <h1>U.S. House Price Index Trends (1975–Present)</h1>
+      <p>
+        Visualization representing decades of quarterly home valuation changes across U.S. states and metropolitan statistical areas.
+      </p>
+
+      <div class="chart-container">
+        <canvas id="heroChart"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Fetch and parse the CSV dataset dynamically
+    Papa.parse('data/hpi_master.csv', {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        const rawData = results.data;
+        
+        // Filter out valid traditional state purchase data for the primary visual
+        const filteredData = rawData.filter(d => d.level === 'State' && d.index_nsa);
+
+        document.getElementById('data-count').innerText = 
+          `${rawData.length.toLocaleString()} Total Observations Loaded`;
+
+        // Process data points into coordinates
+        const scatterPoints = filteredData.map(d => ({
+          x: parseInt(d.yr) + (parseInt(d.period) - 1) / 4,
+          y: parseFloat(d.index_nsa)
+        })).filter(pt => !isNaN(pt.x) && !isNaN(pt.y));
+
+        // Render Hero Graphic using Chart.js
+        const ctx = document.getElementById('heroChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'scatter',
+          data: {
+            datasets: [{
+              label: 'State Housing Index Point',
+              data: scatterPoints,
+              backgroundColor: 'rgba(37, 99, 235, 0.25)',
+              borderColor: 'rgba(37, 99, 235, 0.6)',
+              pointRadius: 2.5
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                title: { display: true, text: 'Year' },
+                ticks: { precision: 0 }
+              },
+              y: {
+                title: { display: true, text: 'House Price Index (Base 100)' }
+              }
+            },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: ctx => `Year ${ctx.raw.x.toFixed(2)}: Index ${ctx.raw.y}`
+                }
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
