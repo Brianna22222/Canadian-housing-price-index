@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html /index.html",
+    "href": "index.html /index.html",
+    "title": "Housing Price Index Overview",
+    "section": "",
+    "text": "Welcome to the Housing Price Index project. This homepage visualizes decades of quarterly home valuation changes across all U.S. states and metropolitan areas.\n#| echo: false #| message: false #| warning: false\nlibrary(tidyverse)\ndf &lt;- read_csv(“data/hpi_master.csv”)\nggplot(df, aes(x = yr, y = index_nsa)) + geom_point(alpha = 0.2, color = “#2563eb”) + theme_minimal() + labs( title = “U.S. House Price Index Trends (1975–Present)”, subtitle = “Data points representing over 100,000 observations”, x = “Year”, y = “House Price Index (Base 100)” )"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Housing Price Index Overview",
+    "section": "",
+    "text": "Welcome to the Housing Price Index project. This homepage visualizes decades of quarterly home valuation changes across all U.S. states and metropolitan areas.\n#| echo: false #| message: false #| warning: false\nlibrary(tidyverse)\ndf &lt;- read_csv(“data/hpi_master.csv”)\nggplot(df, aes(x = yr, y = index_nsa)) + geom_point(alpha = 0.2, color = “#2563eb”) + theme_minimal() + labs( title = “U.S. House Price Index Trends (1975–Present)”, subtitle = “Data points representing over 100,000 observations”, x = “Year”, y = “House Price Index (Base 100)” )"
+  }
+]

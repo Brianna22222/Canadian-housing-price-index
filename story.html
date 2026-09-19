@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housing Price Index - Story</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #1e293b;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+    nav a.active, nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .story-text {
+      font-size: 1.05rem;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+    .chart-container {
+      position: relative;
+      height: 420px;
+      width: 100%;
+      margin: 2rem 0;
+    }
+    .highlight-box {
+      background-color: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Housing Price Index</h2>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="exploration.html">Market Explorer</a>
+      <a href="story.html" class="active">Story Narrative</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1>Data Story: The Anatomy of a Housing Bubble & Recovery</h1>
+      
+      <p class="story-text">
+        Over the past five decades, the United States housing market has experienced dramatic structural shifts driven by macroeconomic policy, changing demographic demand, and historical credit expansion. When looking across thousands of quarterly observation points, a striking pattern emerges: housing valuation growth is rarely linear, and regional divergences can create vastly different financial realities for homeowners depending on location.
+      </p>
+
+      <div class="chart-container">
+        <canvas id="storyChart"></canvas>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Key Insight:</strong> The 2008 Great Financial Crisis represents the single largest nationwide contraction in house price index values in modern American history, taking over a decade for index values in hard-hit states to return to pre-crash baseline levels.
+      </div>
+
+      <p class="story-text">
+        As demonstrated in the dataset, the mid-2000s saw an uncharacteristic surge in house price index values across virtually all U.S. metropolitan areas. Driven by loose lending standards and rapid speculative purchasing, national indices reached unsustainable peaks around 2006 before suffering a historic drawdown during the 2007–2009 recession.
+      </p>
+
+      <p class="story-text">
+        In the decade following the 2008 crash, steady low-interest rate policies by the Federal Reserve allowed index values to slowly recover. By 2020, another dramatic inflection point occurred as shifting workplace dynamics and historical low inventory propelled house price index levels to record heights—demonstrating the long-term resilience of residential real estate over multi-decade time horizons.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    // Fixed analytical visual for the story tab
+    Papa.parse('data/hpi_master.csv', {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        // Average national trends filtered specifically for story presentation
+        const storyData = results.data
+          .filter(d => d.level === 'USA' || d.place_id === 'USA')
+          .map(d => ({
+            x: parseInt(d.yr) + (parseInt(d.period) - 1) / 4,
+            y: parseFloat(d.index_nsa)
+          }))
+          .filter(pt => !isNaN(pt.x) && !isNaN(pt.y));
+
+        const ctx = document.getElementById('storyChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            datasets: [{
+              label: 'National House Price Index Trend',
+              data: storyData,
+              borderColor: '#2563eb',
+              backgroundColor: 'rgba(37, 99, 235, 0.1)',
+              fill: true,
+              tension: 0.2,
+              pointRadius: 0
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: { title: { display: true, text: 'Year' } },
+              y: { title: { display: true, text: 'National Price Index (Base 100)' } }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
