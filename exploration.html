@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housing Price Index - Market Explorer</title>
+  
+  <!-- CDN Scripts for Plotting & CSV Parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #1e293b;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+    nav a.active, nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .controls {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      align-items: center;
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+    }
+    select, input[type="range"] {
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .chart-container {
+      position: relative;
+      height: 480px;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Housing Price Index</h2>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="exploration.html" class="active">Market Explorer</a>
+      <a href="story.html">Story Narrative</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1>Interactive Market Explorer</h1>
+      <p>Filter housing data across states and time periods to examine specific regional price trends.</p>
+
+      <!-- Interactive Controls -->
+      <div class="controls">
+        <div class="control-group">
+          <label for="stateSelect">Select State / Region:</label>
+          <select id="stateSelect">
+            <option value="ALL">All States (Full Dataset)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="yearSlider">Minimum Start Year: <span id="yearVal">1975</span></label>
+          <input type="range" id="yearSlider" min="1975" max="2020" value="1975" step="1" />
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="exploreChart"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let rawDataset = [];
+    let myChart = null;
+
+    // Load CSV file
+    Papa.parse('data/hpi_master.csv', {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        rawDataset = results.data.filter(d => d.level === 'State' && d.index_nsa && d.place_id);
+        
+        populateStateDropdown(rawDataset);
+        renderChart();
+      }
+    });
+
+    // Populate state dropdown options
+    function populateStateDropdown(data) {
+      const states = [...new Set(data.map(d => d.place_id))].sort();
+      const select = document.getElementById('stateSelect');
+      
+      states.forEach(st => {
+        const opt = document.createElement('option');
+        opt.value = st;
+        opt.textContent = st;
+        select.appendChild(opt);
+      });
+    }
+
+    // Filter data and update plot
+    function renderChart() {
+      const selectedState = document.getElementById('stateSelect').value;
+      const minYear = parseInt(document.getElementById('yearSlider').value);
+
+      const filtered = rawDataset.filter(d => {
+        const yr = parseInt(d.yr);
+        const matchState = (selectedState === 'ALL') || (d.place_id === selectedState);
+        return matchState && yr >= minYear;
+      });
+
+      const points = filtered.map(d => ({
+        x: parseInt(d.yr) + (parseInt(d.period) - 1) / 4,
+        y: parseFloat(d.index_nsa)
+      })).filter(pt => !isNaN(pt.x) && !isNaN(pt.y));
+
+      const ctx = document.getElementById('exploreChart').getContext('2d');
+
+      if (myChart) {
+        myChart.destroy();
+      }
+
+      myChart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            label: selectedState === 'ALL' ? 'All States Data' : `${selectedState} Index Values`,
+            data: points,
+            backgroundColor: selectedState === 'ALL' ? 'rgba(37, 99, 235, 0.25)' : 'rgba(225, 29, 72, 0.6)',
+            borderColor: selectedState === 'ALL' ? 'rgba(37, 99, 235, 0.5)' : 'rgba(225, 29, 72, 1)',
+            pointRadius: selectedState === 'ALL' ? 2 : 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: { title: { display: true, text: 'Year' } },
+            y: { title: { display: true, text: 'House Price Index (Base 100)' } }
+          }
+        }
+      });
+    }
+
+    // Event listeners for interactive controls
+    document.getElementById('stateSelect').addEventListener('change', renderChart);
+    document.getElementById('yearSlider').addEventListener('input', function(e) {
+      document.getElementById('yearVal').innerText = e.target.value;
+      renderChart();
+    });
+  </script>
+</body>
+</html>
