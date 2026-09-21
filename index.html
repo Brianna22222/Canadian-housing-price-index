@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,9 +117,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -142,13 +140,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to the Housing Price Index project. This homepage visualizes decades of quarterly home valuation changes across all U.S. states and metropolitan areas.</p>
-<p>#| echo: false #| message: false #| warning: false</p>
-<p>library(tidyverse)</p>
-<p>df &lt;- read_csv(“data/hpi_master.csv”)</p>
-<p>ggplot(df, aes(x = yr, y = index_nsa)) + geom_point(alpha = 0.2, color = “#2563eb”) + theme_minimal() + labs( title = “U.S. House Price Index Trends (1975–Present)”, subtitle = “Data points representing over 100,000 observations”, x = “Year”, y = “House Price Index (Base 100)” )</p>
+<section id="understanding-housing-price-trends" class="level1">
+<h1>Understanding Housing Price Trends</h1>
+<p>Welcome to my Housing Price Index project! This website explores how housing prices have changed over time using thousands of observations from across the United States.</p>
+<section id="housing-price-trends-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="housing-price-trends-over-time">Housing Price Trends Over Time</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-the-project" class="level2">
+<h2 class="anchored" data-anchor-id="explore-the-project">Explore the Project</h2>
+<p>Use the Exploration tab to examine patterns in the data and the Story tab to learn about important housing market trends.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

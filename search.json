@@ -11,6 +11,13 @@
     "href": "index.html",
     "title": "Housing Price Index Overview",
     "section": "",
-    "text": "Welcome to the Housing Price Index project. This homepage visualizes decades of quarterly home valuation changes across all U.S. states and metropolitan areas.\n#| echo: false #| message: false #| warning: false\nlibrary(tidyverse)\ndf &lt;- read_csv(“data/hpi_master.csv”)\nggplot(df, aes(x = yr, y = index_nsa)) + geom_point(alpha = 0.2, color = “#2563eb”) + theme_minimal() + labs( title = “U.S. House Price Index Trends (1975–Present)”, subtitle = “Data points representing over 100,000 observations”, x = “Year”, y = “House Price Index (Base 100)” )"
+    "text": "Welcome to my Housing Price Index project! This website explores how housing prices have changed over time using thousands of observations from across the United States.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the Exploration tab to examine patterns in the data and the Story tab to learn about important housing market trends."
+  },
+  {
+    "objectID": "index.html#explore-the-project",
+    "href": "index.html#explore-the-project",
+    "title": "Housing Price Index Overview",
+    "section": "",
+    "text": "Use the Exploration tab to examine patterns in the data and the Story tab to learn about important housing market trends."
   }
 ]
