@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>U.S. Housing Price Index</title>
+<title>Data Explorer – U.S. Housing Price Index</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Market Insights</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data-explorer.html"> 
+    <a class="nav-link active" href="./data-explorer.html" aria-current="page"> 
 <span class="menu-text">Data Explorer</span></a>
   </li>  
   <li class="nav-item">
@@ -173,12 +173,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#understanding-u.s.-housing-price-trends" id="toc-understanding-u.s.-housing-price-trends" class="nav-link active" data-scroll-target="#understanding-u.s.-housing-price-trends">Understanding U.S. Housing Price Trends</a>
+  <li><a href="#explore-the-dataset" id="toc-explore-the-dataset" class="nav-link active" data-scroll-target="#explore-the-dataset">Explore the Dataset</a>
   <ul class="collapse">
-  <li><a href="#project-at-a-glance" id="toc-project-at-a-glance" class="nav-link" data-scroll-target="#project-at-a-glance">Project at a Glance</a></li>
-  <li><a href="#housing-prices-over-time" id="toc-housing-prices-over-time" class="nav-link" data-scroll-target="#housing-prices-over-time">Housing Prices Over Time</a></li>
-  <li><a href="#what-is-a-housing-price-index" id="toc-what-is-a-housing-price-index" class="nav-link" data-scroll-target="#what-is-a-housing-price-index">What Is a Housing Price Index?</a></li>
-  <li><a href="#explore-the-project" id="toc-explore-the-project" class="nav-link" data-scroll-target="#explore-the-project">Explore the Project</a></li>
+  <li><a href="#what-is-in-the-dataset" id="toc-what-is-in-the-dataset" class="nav-link" data-scroll-target="#what-is-in-the-dataset">What Is in the Dataset?</a></li>
+  <li><a href="#observations-by-year" id="toc-observations-by-year" class="nav-link" data-scroll-target="#observations-by-year">Observations by Year</a></li>
+  <li><a href="#recent-observations" id="toc-recent-observations" class="nav-link" data-scroll-target="#recent-observations">Recent Observations</a></li>
+  <li><a href="#why-explore-the-raw-data" id="toc-why-explore-the-raw-data" class="nav-link" data-scroll-target="#why-explore-the-raw-data">Why Explore the Raw Data?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -188,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">U.S. Housing Price Index</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Data Explorer</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -205,69 +205,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="understanding-u.s.-housing-price-trends" class="level1">
-<h1>Understanding U.S. Housing Price Trends</h1>
-<p>Welcome to my Housing Price Index project. This website explores how housing price index values have changed over time and how patterns differ across geographic regions in the United States.</p>
-<p>The project uses data from the Federal Housing Finance Agency (FHFA) House Price Index to examine long-term housing market patterns.</p>
-<section id="project-at-a-glance" class="level2">
-<h2 class="anchored" data-anchor-id="project-at-a-glance">Project at a Glance</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-<section id="observations" class="level3">
-<h3 class="anchored" data-anchor-id="observations">Observations</h3>
-<p><strong>186,011</strong></p>
-<p>Housing price index observations in the dataset.</p>
+<section id="explore-the-dataset" class="level1">
+<h1>Explore the Dataset</h1>
+<p>The visualizations throughout this project are based on the observations in <code>hpi_master.csv</code>.</p>
+<p>This page provides a closer look at the structure of that dataset.</p>
+<section id="what-is-in-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-in-the-dataset">What Is in the Dataset?</h2>
+<p>Each row represents a housing price index observation for a particular geographic location and time period.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hpi_type</code></td>
+<td>Type of housing price index</td>
+</tr>
+<tr class="even">
+<td><code>hpi_flavor</code></td>
+<td>Index category</td>
+</tr>
+<tr class="odd">
+<td><code>frequency</code></td>
+<td>Frequency of the observation</td>
+</tr>
+<tr class="even">
+<td><code>level</code></td>
+<td>Geographic level</td>
+</tr>
+<tr class="odd">
+<td><code>place_name</code></td>
+<td>Name of the geographic location</td>
+</tr>
+<tr class="even">
+<td><code>place_id</code></td>
+<td>Geographic identifier</td>
+</tr>
+<tr class="odd">
+<td><code>yr</code></td>
+<td>Year</td>
+</tr>
+<tr class="even">
+<td><code>period</code></td>
+<td>Month or quarter</td>
+</tr>
+<tr class="odd">
+<td><code>index_nsa</code></td>
+<td>Non-seasonally adjusted index</td>
+</tr>
+<tr class="even">
+<td><code>index_sa</code></td>
+<td>Seasonally adjusted index</td>
+</tr>
+<tr class="odd">
+<td><code>rstderr</code></td>
+<td>Relative standard error when available</td>
+</tr>
+<tr class="even">
+<td><code>note</code></td>
+<td>Additional information about an observation</td>
+</tr>
+</tbody>
+</table>
 </section>
-</div><div class="column" style="width:25%;">
-<section id="locations" class="level3">
-<h3 class="anchored" data-anchor-id="locations">Locations</h3>
-<p><strong>472</strong></p>
-<p>Geographic locations represented.</p>
-</section>
-</div><div class="column" style="width:25%;">
-<section id="starting-year" class="level3">
-<h3 class="anchored" data-anchor-id="starting-year">Starting Year</h3>
-<p><strong>1975</strong></p>
-<p>Beginning of the dataset’s time period.</p>
-</section>
-</div><div class="column" style="width:25%;">
-<section id="ending-year" class="level3">
-<h3 class="anchored" data-anchor-id="ending-year">Ending Year</h3>
-<p><strong>2026</strong></p>
-<p>Latest year represented in the dataset.</p>
-</section>
-</div>
-</div>
-</section>
-<section id="housing-prices-over-time" class="level2">
-<h2 class="anchored" data-anchor-id="housing-prices-over-time">Housing Prices Over Time</h2>
-<p>The chart below summarizes the annual average housing price index across the observations in the dataset.</p>
+<section id="observations-by-year" class="level2">
+<h2 class="anchored" data-anchor-id="observations-by-year">Observations by Year</h2>
+<p>The number of observations can vary across years.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="data-explorer_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="what-is-a-housing-price-index" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-housing-price-index">What Is a Housing Price Index?</h2>
-<p>A housing price index provides a way to examine changes in home prices over time. Instead of focusing on the price of one individual home, an index summarizes price movement across a group of properties.</p>
-<p>The FHFA House Price Index is based on repeat transactions and refinancings involving single-family properties with mortgages purchased or securitized by Fannie Mae or Freddie Mac. :contentReference<span data-index="1">oaicite:1</span></p>
+<section id="recent-observations" class="level2">
+<h2 class="anchored" data-anchor-id="recent-observations">Recent Observations</h2>
+<p>Here are 25 observations from the most recent years in the dataset.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 25 × 5
+   place_name                     yr period index_nsa index_sa
+   &lt;chr&gt;                       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+ 1 East North Central Division  2026      6      393.     383.
+ 2 East South Central Division  2026      6      430.     420.
+ 3 Middle Atlantic Division     2026      6      424.     414.
+ 4 Mountain Division            2026      6      620.     610.
+ 5 New England Division         2026      6      464.     452.
+ 6 Pacific Division             2026      6      475.     466.
+ 7 South Atlantic Division      2026      6      476.     467.
+ 8 West North Central Division  2026      6      435.     425.
+ 9 West South Central Division  2026      6      434.     426.
+10 United States                2026      6      452.     443.
+# ℹ 15 more rows</code></pre>
+</div>
+</div>
 </section>
-<section id="explore-the-project" class="level2">
-<h2 class="anchored" data-anchor-id="explore-the-project">Explore the Project</h2>
-<p>Use the navigation bar to explore different parts of the analysis.</p>
+<section id="why-explore-the-raw-data" class="level2">
+<h2 class="anchored" data-anchor-id="why-explore-the-raw-data">Why Explore the Raw Data?</h2>
+<p>Charts are summaries. Looking at the underlying observations helps us understand where those summaries come from.</p>
+<p>For example, we can examine:</p>
 <ul>
-<li><strong>Housing Trends</strong> — examine changes in the index over time.</li>
-<li><strong>Regional Comparisons</strong> — compare patterns across U.S. Census Divisions.</li>
-<li><strong>Housing Stories</strong> — explore several patterns found in the data.</li>
-<li><strong>Market Insights</strong> — examine summary measurements and variation.</li>
-<li><strong>Data Explorer</strong> — look more closely at the underlying observations.</li>
-<li><strong>About</strong> — learn about the project, creator, and data source.</li>
+<li>Which locations are represented</li>
+<li>Which years contain observations</li>
+<li>How many observations are available</li>
+<li>How seasonally adjusted and non-seasonally adjusted values differ</li>
 </ul>
+<p>This page connects the individual observations to the larger patterns shown throughout the project.</p>
 
 
 <!-- -->
@@ -727,112 +776,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "U.S. Housing Price Index"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Understanding U.S. Housing Price Trends</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Welcome to my Housing Price Index project. This website explores how housing price index values have changed over time and how patterns differ across geographic regions in the United States.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The project uses data from the Federal Housing Finance Agency (FHFA) House Price Index to examine long-term housing market patterns.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/hpi_master.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>total_observations <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>number_of_locations <span class="ot">&lt;-</span> <span class="fu">n_distinct</span>(df<span class="sc">$</span>place_name)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>first_year <span class="ot">&lt;-</span> <span class="fu">min</span>(df<span class="sc">$</span>yr, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>last_year <span class="ot">&lt;-</span> <span class="fu">max</span>(df<span class="sc">$</span>yr, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>annual <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(yr) <span class="sc">|&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">average_index =</span> <span class="fu">mean</span>(index_nsa, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project at a Glance</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>::: {.columns}</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>::: {.column width="25%"}</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Observations</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>**`r format(total_observations, big.mark = ",")`**</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Housing price index observations in the dataset.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>::: {.column width="25%"}</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Locations</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>**`r number_of_locations`**</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Geographic locations represented.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>::: {.column width="25%"}</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Starting Year</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**`r first_year`**</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Beginning of the dataset's time period.</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>::: {.column width="25%"}</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ending Year</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>**`r last_year`**</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Latest year represented in the dataset.</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Housing Prices Over Time</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>The chart below summarizes the annual average housing price index across the observations in the dataset.</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> yr, <span class="at">y =</span> average_index)) <span class="sc">+</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Housing Price Index Over Time"</span>,</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Annual average across observations"</span>,</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Housing Price Index"</span></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## What Is a Housing Price Index?</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>A housing price index provides a way to examine changes in home prices over time. Instead of focusing on the price of one individual home, an index summarizes price movement across a group of properties.</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>The FHFA House Price Index is based on repeat transactions and refinancings involving single-family properties with mortgages purchased or securitized by Fannie Mae or Freddie Mac. :contentReference<span class="co">[</span><span class="ot">oaicite:1</span><span class="co">]</span>{index=1}</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Explore the Project</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Use the navigation bar to explore different parts of the analysis.</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Housing Trends** — examine changes in the index over time.</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Regional Comparisons** — compare patterns across U.S. Census Divisions.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Housing Stories** — explore several patterns found in the data.</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Market Insights** — examine summary measurements and variation.</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Data Explorer** — look more closely at the underlying observations.</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**About** — learn about the project, creator, and data source.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Data Explorer"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Explore the Dataset</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>The visualizations throughout this project are based on the observations in <span class="in">`hpi_master.csv`</span>.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>This page provides a closer look at the structure of that dataset.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/hpi_master.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## What Is in the Dataset?</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>Each row represents a housing price index observation for a particular geographic location and time period.</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Variable <span class="pp">|</span> Description <span class="pp">|</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`hpi_type`</span> <span class="pp">|</span> Type of housing price index <span class="pp">|</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`hpi_flavor`</span> <span class="pp">|</span> Index category <span class="pp">|</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`frequency`</span> <span class="pp">|</span> Frequency of the observation <span class="pp">|</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`level`</span> <span class="pp">|</span> Geographic level <span class="pp">|</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`place_name`</span> <span class="pp">|</span> Name of the geographic location <span class="pp">|</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`place_id`</span> <span class="pp">|</span> Geographic identifier <span class="pp">|</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`yr`</span> <span class="pp">|</span> Year <span class="pp">|</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`period`</span> <span class="pp">|</span> Month or quarter <span class="pp">|</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`index_nsa`</span> <span class="pp">|</span> Non-seasonally adjusted index <span class="pp">|</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`index_sa`</span> <span class="pp">|</span> Seasonally adjusted index <span class="pp">|</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`rstderr`</span> <span class="pp">|</span> Relative standard error when available <span class="pp">|</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`note`</span> <span class="pp">|</span> Additional information about an observation <span class="pp">|</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observations by Year</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>The number of observations can vary across years.</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>observations_by_year <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(yr)</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(observations_by_year, <span class="fu">aes</span>(<span class="at">x =</span> yr, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Number of Observations by Year"</span>,</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Observations"</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Recent Observations</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>Here are 25 observations from the most recent years in the dataset.</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>recent_data <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    place_name,</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    yr,</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    period,</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    index_nsa,</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    index_sa</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(yr), <span class="fu">desc</span>(period)) <span class="sc">|&gt;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">25</span>)</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>recent_data</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Explore the Raw Data?</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>Charts are summaries. Looking at the underlying observations helps us understand where those summaries come from.</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>For example, we can examine:</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which locations are represented</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which years contain observations</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How many observations are available</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How seasonally adjusted and non-seasonally adjusted values differ</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>This page connects the individual observations to the larger patterns shown throughout the project.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -1,5 +1,194 @@
 [
   {
+    "objectID": "insights.html",
+    "href": "insights.html",
+    "title": "Market Insights",
+    "section": "",
+    "text": "This page summarizes several characteristics of the housing price index dataset.\nThe goal is to move beyond a single chart and examine the size, time period, and variation represented in the data.\n\n\n\n\n\n\n186,011\nTotal observations.\n\n\n\n\n472\nUnique locations.\n\n\n\n\n1975\nEarliest year.\n\n\n\n\n2026\nLatest year.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe range measures the difference between the highest and lowest index value recorded within each year.\n\n\n\n\n\n\n\n\n\n\n\n\nA larger range means that the index values represented in the data were more spread out within that year.\nThe range does not tell us why the differences occurred. It simply provides a way to describe variation in the observations.\n\n\n\nSummary statistics can help us identify patterns that are not immediately obvious from individual observations.\nUse Data Explorer next to examine the underlying rows that produce these summaries."
+  },
+  {
+    "objectID": "insights.html#key-numbers",
+    "href": "insights.html#key-numbers",
+    "title": "Market Insights",
+    "section": "",
+    "text": "186,011\nTotal observations.\n\n\n\n\n472\nUnique locations.\n\n\n\n\n1975\nEarliest year.\n\n\n\n\n2026\nLatest year."
+  },
+  {
+    "objectID": "insights.html#how-much-do-values-vary",
+    "href": "insights.html#how-much-do-values-vary",
+    "title": "Market Insights",
+    "section": "",
+    "text": "The range measures the difference between the highest and lowest index value recorded within each year."
+  },
+  {
+    "objectID": "insights.html#how-should-we-interpret-this",
+    "href": "insights.html#how-should-we-interpret-this",
+    "title": "Market Insights",
+    "section": "",
+    "text": "A larger range means that the index values represented in the data were more spread out within that year.\nThe range does not tell us why the differences occurred. It simply provides a way to describe variation in the observations."
+  },
+  {
+    "objectID": "insights.html#why-this-matters",
+    "href": "insights.html#why-this-matters",
+    "title": "Market Insights",
+    "section": "",
+    "text": "Summary statistics can help us identify patterns that are not immediately obvious from individual observations.\nUse Data Explorer next to examine the underlying rows that produce these summaries."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi! My name is Brianna Eubank, and I am a student-athlete at New College of Florida in Sarasota, Florida.\nThis project was created as a data science project to explore housing price index data, practice data visualization, and communicate findings through an interactive website.\n\n\n\n\nName: Brianna Eubank\nEmail: b.eubank28@ncf.edu\nGitHub: Brianna22222\nRepository: Canadian-housing-price-index\nCollege: New College of Florida\n\n\n\n\nThis project uses the FHFA House Price Index (HPI) dataset published by the Federal Housing Finance Agency (FHFA).\nThe FHFA HPI is a collection of publicly available house price indexes that measures changes in single-family home values across the United States. The dataset includes information for different geographic levels, including the United States, Census Divisions, states, metropolitan areas, counties, and other areas. The project uses variables such as geographic location, year, period, index type, and housing price index values to examine patterns over time. :contentReferenceoaicite:2\n\n\n\nThe analysis in this website focuses on describing patterns found in the data.\nThe project examines:\n\nHousing price index changes over time\nDifferences between geographic regions\nAnnual averages\nVariation within years\nThe structure of the underlying dataset\n\nThe visualizations are created using R, ggplot2, tidyverse, and Quarto.\n\n\n\n\n\nIntroduces the project and provides an overview of the housing price index.\n\n\n\nExamines how the housing price index changes over time.\n\n\n\nCompares housing price index patterns across selected U.S. Census Divisions.\n\n\n\nUses several visualizations to communicate patterns found in the data.\n\n\n\nProvides summary statistics and examines variation in the dataset.\n\n\n\nProvides a closer look at the underlying observations and variables.\n\n\n\nProvides information about the project, creator, and data source.\n\n\n\n\nFederal Housing Finance Agency — FHFA House Price Index\nThe official FHFA HPI dataset page provides access to the master data, monthly data, quarterly data, annual data, and documentation. :contentReferenceoaicite:3\nSource: FHFA House Price Index®"
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About",
+    "section": "",
+    "text": "Hi! My name is Brianna Eubank, and I am a student-athlete at New College of Florida in Sarasota, Florida.\nThis project was created as a data science project to explore housing price index data, practice data visualization, and communicate findings through an interactive website."
+  },
+  {
+    "objectID": "about.html#project-information",
+    "href": "about.html#project-information",
+    "title": "About",
+    "section": "",
+    "text": "Name: Brianna Eubank\nEmail: b.eubank28@ncf.edu\nGitHub: Brianna22222\nRepository: Canadian-housing-price-index\nCollege: New College of Florida"
+  },
+  {
+    "objectID": "about.html#data-source",
+    "href": "about.html#data-source",
+    "title": "About",
+    "section": "",
+    "text": "This project uses the FHFA House Price Index (HPI) dataset published by the Federal Housing Finance Agency (FHFA).\nThe FHFA HPI is a collection of publicly available house price indexes that measures changes in single-family home values across the United States. The dataset includes information for different geographic levels, including the United States, Census Divisions, states, metropolitan areas, counties, and other areas. The project uses variables such as geographic location, year, period, index type, and housing price index values to examine patterns over time. :contentReferenceoaicite:2"
+  },
+  {
+    "objectID": "about.html#about-the-analysis",
+    "href": "about.html#about-the-analysis",
+    "title": "About",
+    "section": "",
+    "text": "The analysis in this website focuses on describing patterns found in the data.\nThe project examines:\n\nHousing price index changes over time\nDifferences between geographic regions\nAnnual averages\nVariation within years\nThe structure of the underlying dataset\n\nThe visualizations are created using R, ggplot2, tidyverse, and Quarto."
+  },
+  {
+    "objectID": "about.html#website-guide",
+    "href": "about.html#website-guide",
+    "title": "About",
+    "section": "",
+    "text": "Introduces the project and provides an overview of the housing price index.\n\n\n\nExamines how the housing price index changes over time.\n\n\n\nCompares housing price index patterns across selected U.S. Census Divisions.\n\n\n\nUses several visualizations to communicate patterns found in the data.\n\n\n\nProvides summary statistics and examines variation in the dataset.\n\n\n\nProvides a closer look at the underlying observations and variables.\n\n\n\nProvides information about the project, creator, and data source."
+  },
+  {
+    "objectID": "about.html#data-source-links",
+    "href": "about.html#data-source-links",
+    "title": "About",
+    "section": "",
+    "text": "Federal Housing Finance Agency — FHFA House Price Index\nThe official FHFA HPI dataset page provides access to the master data, monthly data, quarterly data, annual data, and documentation. :contentReferenceoaicite:3\nSource: FHFA House Price Index®"
+  },
+  {
+    "objectID": "story.html",
+    "href": "story.html",
+    "title": "Housing Stories",
+    "section": "",
+    "text": "Data becomes more useful when we can turn numbers into questions and observations.\nThis page presents several stories that can be explored using the housing price index data.\n\n\nThe first story is about long-term change.\nThe annual average housing price index provides a simple way to see how index values move across the years.\n\n\n\n\n\n\n\n\n\n\n\nThe chart shows the broad movement of the index across the time period represented in the dataset.\nRather than focusing on a single month or location, the annual average provides a high-level view of the data.\n\n\n\n\n\nThe second story is about geography.\nHousing price index values can vary between locations, meaning that looking only at an overall average may not show the full picture.\nThe Regional Comparisons page examines this idea by comparing U.S. Census Divisions.\n\n\nIf two regions experience the same general direction of change, do they necessarily experience the same magnitude of change?\nThe regional chart allows us to investigate that question.\n\n\n\n\n\nThe third story is about how the same dataset can answer different questions.\nWe can use the data to examine:\n\nChange over time\nDifferences between locations\nThe number of observations available\nVariation within a year\nDifferences between seasonally adjusted and non-seasonally adjusted values\n\nThis is why the project includes multiple pages rather than relying on a single visualization.\n\n\n\n\nUse the other pages to continue exploring:\nHousing Trends\nLook at long-term changes.\nRegional Comparisons\nCompare geographic patterns.\nMarket Insights\nExamine summary measurements and variation.\nData Explorer\nLook directly at the underlying observations.\nThe goal is not just to look at a graph, but to use the data to ask better questions."
+  },
+  {
+    "objectID": "story.html#story-1-housing-prices-change-over-time",
+    "href": "story.html#story-1-housing-prices-change-over-time",
+    "title": "Housing Stories",
+    "section": "",
+    "text": "The first story is about long-term change.\nThe annual average housing price index provides a simple way to see how index values move across the years.\n\n\n\n\n\n\n\n\n\n\n\nThe chart shows the broad movement of the index across the time period represented in the dataset.\nRather than focusing on a single month or location, the annual average provides a high-level view of the data."
+  },
+  {
+    "objectID": "story.html#story-2-location-matters",
+    "href": "story.html#story-2-location-matters",
+    "title": "Housing Stories",
+    "section": "",
+    "text": "The second story is about geography.\nHousing price index values can vary between locations, meaning that looking only at an overall average may not show the full picture.\nThe Regional Comparisons page examines this idea by comparing U.S. Census Divisions.\n\n\nIf two regions experience the same general direction of change, do they necessarily experience the same magnitude of change?\nThe regional chart allows us to investigate that question."
+  },
+  {
+    "objectID": "story.html#story-3-one-dataset-many-questions",
+    "href": "story.html#story-3-one-dataset-many-questions",
+    "title": "Housing Stories",
+    "section": "",
+    "text": "The third story is about how the same dataset can answer different questions.\nWe can use the data to examine:\n\nChange over time\nDifferences between locations\nThe number of observations available\nVariation within a year\nDifferences between seasonally adjusted and non-seasonally adjusted values\n\nThis is why the project includes multiple pages rather than relying on a single visualization."
+  },
+  {
+    "objectID": "story.html#what-should-we-investigate-next",
+    "href": "story.html#what-should-we-investigate-next",
+    "title": "Housing Stories",
+    "section": "",
+    "text": "Use the other pages to continue exploring:\nHousing Trends\nLook at long-term changes.\nRegional Comparisons\nCompare geographic patterns.\nMarket Insights\nExamine summary measurements and variation.\nData Explorer\nLook directly at the underlying observations.\nThe goal is not just to look at a graph, but to use the data to ask better questions."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "U.S. Housing Price Index",
+    "section": "",
+    "text": "Welcome to my Housing Price Index project. This website explores how housing price index values have changed over time and how patterns differ across geographic regions in the United States.\nThe project uses data from the Federal Housing Finance Agency (FHFA) House Price Index to examine long-term housing market patterns.\n\n\n\n\n\n\n186,011\nHousing price index observations in the dataset.\n\n\n\n\n472\nGeographic locations represented.\n\n\n\n\n1975\nBeginning of the dataset’s time period.\n\n\n\n\n2026\nLatest year represented in the dataset.\n\n\n\n\n\n\nThe chart below summarizes the annual average housing price index across the observations in the dataset.\n\n\n\n\n\n\n\n\n\n\n\n\nA housing price index provides a way to examine changes in home prices over time. Instead of focusing on the price of one individual home, an index summarizes price movement across a group of properties.\nThe FHFA House Price Index is based on repeat transactions and refinancings involving single-family properties with mortgages purchased or securitized by Fannie Mae or Freddie Mac. :contentReferenceoaicite:1\n\n\n\nUse the navigation bar to explore different parts of the analysis.\n\nHousing Trends — examine changes in the index over time.\nRegional Comparisons — compare patterns across U.S. Census Divisions.\nHousing Stories — explore several patterns found in the data.\nMarket Insights — examine summary measurements and variation.\nData Explorer — look more closely at the underlying observations.\nAbout — learn about the project, creator, and data source."
+  },
+  {
+    "objectID": "index.html#project-at-a-glance",
+    "href": "index.html#project-at-a-glance",
+    "title": "U.S. Housing Price Index",
+    "section": "",
+    "text": "186,011\nHousing price index observations in the dataset.\n\n\n\n\n472\nGeographic locations represented.\n\n\n\n\n1975\nBeginning of the dataset’s time period.\n\n\n\n\n2026\nLatest year represented in the dataset."
+  },
+  {
+    "objectID": "index.html#housing-prices-over-time",
+    "href": "index.html#housing-prices-over-time",
+    "title": "U.S. Housing Price Index",
+    "section": "",
+    "text": "The chart below summarizes the annual average housing price index across the observations in the dataset."
+  },
+  {
+    "objectID": "index.html#what-is-a-housing-price-index",
+    "href": "index.html#what-is-a-housing-price-index",
+    "title": "U.S. Housing Price Index",
+    "section": "",
+    "text": "A housing price index provides a way to examine changes in home prices over time. Instead of focusing on the price of one individual home, an index summarizes price movement across a group of properties.\nThe FHFA House Price Index is based on repeat transactions and refinancings involving single-family properties with mortgages purchased or securitized by Fannie Mae or Freddie Mac. :contentReferenceoaicite:1"
+  },
+  {
+    "objectID": "index.html#explore-the-project",
+    "href": "index.html#explore-the-project",
+    "title": "U.S. Housing Price Index",
+    "section": "",
+    "text": "Use the navigation bar to explore different parts of the analysis.\n\nHousing Trends — examine changes in the index over time.\nRegional Comparisons — compare patterns across U.S. Census Divisions.\nHousing Stories — explore several patterns found in the data.\nMarket Insights — examine summary measurements and variation.\nData Explorer — look more closely at the underlying observations.\nAbout — learn about the project, creator, and data source."
+  },
+  {
+    "objectID": "data-explorer.html",
+    "href": "data-explorer.html",
+    "title": "Data Explorer",
+    "section": "",
+    "text": "The visualizations throughout this project are based on the observations in hpi_master.csv.\nThis page provides a closer look at the structure of that dataset.\n\n\nEach row represents a housing price index observation for a particular geographic location and time period.\n\n\n\nVariable\nDescription\n\n\n\n\nhpi_type\nType of housing price index\n\n\nhpi_flavor\nIndex category\n\n\nfrequency\nFrequency of the observation\n\n\nlevel\nGeographic level\n\n\nplace_name\nName of the geographic location\n\n\nplace_id\nGeographic identifier\n\n\nyr\nYear\n\n\nperiod\nMonth or quarter\n\n\nindex_nsa\nNon-seasonally adjusted index\n\n\nindex_sa\nSeasonally adjusted index\n\n\nrstderr\nRelative standard error when available\n\n\nnote\nAdditional information about an observation\n\n\n\n\n\n\nThe number of observations can vary across years.\n\n\n\n\n\n\n\n\n\n\n\n\nHere are 25 observations from the most recent years in the dataset.\n\n\n# A tibble: 25 × 5\n   place_name                     yr period index_nsa index_sa\n   &lt;chr&gt;                       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 East North Central Division  2026      6      393.     383.\n 2 East South Central Division  2026      6      430.     420.\n 3 Middle Atlantic Division     2026      6      424.     414.\n 4 Mountain Division            2026      6      620.     610.\n 5 New England Division         2026      6      464.     452.\n 6 Pacific Division             2026      6      475.     466.\n 7 South Atlantic Division      2026      6      476.     467.\n 8 West North Central Division  2026      6      435.     425.\n 9 West South Central Division  2026      6      434.     426.\n10 United States                2026      6      452.     443.\n# ℹ 15 more rows\n\n\n\n\n\nCharts are summaries. Looking at the underlying observations helps us understand where those summaries come from.\nFor example, we can examine:\n\nWhich locations are represented\nWhich years contain observations\nHow many observations are available\nHow seasonally adjusted and non-seasonally adjusted values differ\n\nThis page connects the individual observations to the larger patterns shown throughout the project."
+  },
+  {
+    "objectID": "data-explorer.html#what-is-in-the-dataset",
+    "href": "data-explorer.html#what-is-in-the-dataset",
+    "title": "Data Explorer",
+    "section": "",
+    "text": "Each row represents a housing price index observation for a particular geographic location and time period.\n\n\n\nVariable\nDescription\n\n\n\n\nhpi_type\nType of housing price index\n\n\nhpi_flavor\nIndex category\n\n\nfrequency\nFrequency of the observation\n\n\nlevel\nGeographic level\n\n\nplace_name\nName of the geographic location\n\n\nplace_id\nGeographic identifier\n\n\nyr\nYear\n\n\nperiod\nMonth or quarter\n\n\nindex_nsa\nNon-seasonally adjusted index\n\n\nindex_sa\nSeasonally adjusted index\n\n\nrstderr\nRelative standard error when available\n\n\nnote\nAdditional information about an observation"
+  },
+  {
+    "objectID": "data-explorer.html#observations-by-year",
+    "href": "data-explorer.html#observations-by-year",
+    "title": "Data Explorer",
+    "section": "",
+    "text": "The number of observations can vary across years."
+  },
+  {
+    "objectID": "data-explorer.html#recent-observations",
+    "href": "data-explorer.html#recent-observations",
+    "title": "Data Explorer",
+    "section": "",
+    "text": "Here are 25 observations from the most recent years in the dataset.\n\n\n# A tibble: 25 × 5\n   place_name                     yr period index_nsa index_sa\n   &lt;chr&gt;                       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 East North Central Division  2026      6      393.     383.\n 2 East South Central Division  2026      6      430.     420.\n 3 Middle Atlantic Division     2026      6      424.     414.\n 4 Mountain Division            2026      6      620.     610.\n 5 New England Division         2026      6      464.     452.\n 6 Pacific Division             2026      6      475.     466.\n 7 South Atlantic Division      2026      6      476.     467.\n 8 West North Central Division  2026      6      435.     425.\n 9 West South Central Division  2026      6      434.     426.\n10 United States                2026      6      452.     443.\n# ℹ 15 more rows"
+  },
+  {
+    "objectID": "data-explorer.html#why-explore-the-raw-data",
+    "href": "data-explorer.html#why-explore-the-raw-data",
+    "title": "Data Explorer",
+    "section": "",
+    "text": "Charts are summaries. Looking at the underlying observations helps us understand where those summaries come from.\nFor example, we can examine:\n\nWhich locations are represented\nWhich years contain observations\nHow many observations are available\nHow seasonally adjusted and non-seasonally adjusted values differ\n\nThis page connects the individual observations to the larger patterns shown throughout the project."
+  },
+  {
     "objectID": "index.html /index.html",
     "href": "index.html /index.html",
     "title": "Housing Price Index Overview",
@@ -7,17 +196,66 @@
     "text": "Welcome to the Housing Price Index project. This homepage visualizes decades of quarterly home valuation changes across all U.S. states and metropolitan areas.\n#| echo: false #| message: false #| warning: false\nlibrary(tidyverse)\ndf &lt;- read_csv(“data/hpi_master.csv”)\nggplot(df, aes(x = yr, y = index_nsa)) + geom_point(alpha = 0.2, color = “#2563eb”) + theme_minimal() + labs( title = “U.S. House Price Index Trends (1975–Present)”, subtitle = “Data points representing over 100,000 observations”, x = “Year”, y = “House Price Index (Base 100)” )"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Housing Price Index Overview",
+    "objectID": "regional.html",
+    "href": "regional.html",
+    "title": "Regional Comparisons",
     "section": "",
-    "text": "Welcome to my Housing Price Index project! This website explores how housing prices have changed over time using thousands of observations from across the United States.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the Exploration tab to examine patterns in the data and the Story tab to learn about important housing market trends."
+    "text": "Housing markets can behave differently across geographic areas. This page compares selected U.S. Census Divisions using the housing price index.\nFor this comparison, the data is filtered to traditional, purchase-only, monthly observations at the U.S. and Census Division level.\n\n\nThe chart compares annual average index values across six locations represented in the filtered dataset.\n\n\n\n\n\n\n\n\n\n\n\n\nA national or overall average can hide differences between geographic areas.\nComparing regions allows us to see whether different locations follow similar or different patterns over time.\n\n\n\n\nDo the regions follow similar patterns?\nAre some regions more variable than others?\nAre there periods when regional differences become larger?\nDoes the overall pattern look similar to the national trend?\n\nThe Housing Stories page uses these ideas to tell several data-based stories."
   },
   {
-    "objectID": "index.html#explore-the-project",
-    "href": "index.html#explore-the-project",
-    "title": "Housing Price Index Overview",
+    "objectID": "regional.html#housing-price-index-by-region",
+    "href": "regional.html#housing-price-index-by-region",
+    "title": "Regional Comparisons",
     "section": "",
-    "text": "Use the Exploration tab to examine patterns in the data and the Story tab to learn about important housing market trends."
+    "text": "The chart compares annual average index values across six locations represented in the filtered dataset."
+  },
+  {
+    "objectID": "regional.html#why-compare-regions",
+    "href": "regional.html#why-compare-regions",
+    "title": "Regional Comparisons",
+    "section": "",
+    "text": "A national or overall average can hide differences between geographic areas.\nComparing regions allows us to see whether different locations follow similar or different patterns over time."
+  },
+  {
+    "objectID": "regional.html#questions-to-explore",
+    "href": "regional.html#questions-to-explore",
+    "title": "Regional Comparisons",
+    "section": "",
+    "text": "Do the regions follow similar patterns?\nAre some regions more variable than others?\nAre there periods when regional differences become larger?\nDoes the overall pattern look similar to the national trend?\n\nThe Housing Stories page uses these ideas to tell several data-based stories."
+  },
+  {
+    "objectID": "trends.html",
+    "href": "trends.html",
+    "title": "Housing Trends",
+    "section": "",
+    "text": "How has the housing price index changed over the years?\nThis page focuses on the overall movement of housing price index values through time.\n\n\nThe annual average provides a simplified view of the overall pattern in the dataset.\n\n\n\n\n\n\n\n\n\n\n\n\nThe mean and median provide two different summaries of the observations.\n\n\n\n\n\n\n\n\n\n\n\n\nLooking at the two summaries helps us examine whether the overall pattern is similar when using the mean and median.\nThe index is a relative measure, so the focus of this project is on changes and patterns over time, rather than interpreting the index as a dollar price.\n\n\n\n\nHow does the index change over time?\nAre there periods with larger changes?\nDo the mean and median show similar patterns?\nHow might the pattern differ between geographic regions?\n\nContinue to Regional Comparisons to investigate geographic differences."
+  },
+  {
+    "objectID": "trends.html#annual-housing-price-index",
+    "href": "trends.html#annual-housing-price-index",
+    "title": "Housing Trends",
+    "section": "",
+    "text": "The annual average provides a simplified view of the overall pattern in the dataset."
+  },
+  {
+    "objectID": "trends.html#average-vs.-median",
+    "href": "trends.html#average-vs.-median",
+    "title": "Housing Trends",
+    "section": "",
+    "text": "The mean and median provide two different summaries of the observations."
+  },
+  {
+    "objectID": "trends.html#what-should-we-notice",
+    "href": "trends.html#what-should-we-notice",
+    "title": "Housing Trends",
+    "section": "",
+    "text": "Looking at the two summaries helps us examine whether the overall pattern is similar when using the mean and median.\nThe index is a relative measure, so the focus of this project is on changes and patterns over time, rather than interpreting the index as a dollar price."
+  },
+  {
+    "objectID": "trends.html#questions-to-explore",
+    "href": "trends.html#questions-to-explore",
+    "title": "Housing Trends",
+    "section": "",
+    "text": "How does the index change over time?\nAre there periods with larger changes?\nDo the mean and median show similar patterns?\nHow might the pattern differ between geographic regions?\n\nContinue to Regional Comparisons to investigate geographic differences."
   }
 ]
