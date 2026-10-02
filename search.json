@@ -191,9 +191,9 @@
   {
     "objectID": "index.html /index.html",
     "href": "index.html /index.html",
-    "title": "Housing Price Index Overview",
+    "title": "",
     "section": "",
-    "text": "Welcome to the Housing Price Index project. This homepage visualizes housing price index changes across U.S. states, metropolitan areas, and other geographic regions over time.\n#| echo: false #| message: false #| warning: false\nlibrary(tidyverse)\ndf &lt;- read_csv(“data/hpi_master.csv”, show_col_types = FALSE)\nannual &lt;- df |&gt; group_by(yr) |&gt; summarize( average_index = mean(index_nsa, na.rm = TRUE), .groups = “drop” )\nggplot() + geom_point( data = df, aes(x = yr, y = index_nsa), alpha = 0.08, size = 0.7, color = “#2563eb” ) + geom_line( data = annual, aes(x = yr, y = average_index), linewidth = 1.2, color = “#dc2626” ) + theme_minimal() + labs( title = “U.S. House Price Index Trends (1975–Present)”, subtitle = “Individual observations with annual averages shown as a line”, x = “Year”, y = “House Price Index” )"
+    "text": "Code\n\n\n\n\nWelcome to the Housing Price Index project. This homepage visualizes housing price index changes across U.S. states, metropolitan areas, and other geographic regions over time.\n#| echo: false #| message: false #| warning: false\nlibrary(tidyverse)\ndf &lt;- read_csv(“data/hpi_master.csv”, show_col_types = FALSE)\nannual &lt;- df |&gt; group_by(yr) |&gt; summarize( average_index = mean(index_nsa, na.rm = TRUE), .groups = “drop” )\nggplot() + geom_point( data = df, aes(x = yr, y = index_nsa), alpha = 0.08, size = 0.7, color = “#2563eb” ) + geom_line( data = annual, aes(x = yr, y = average_index), linewidth = 1.2, color = “#dc2626” ) + theme_minimal() + labs( title = “U.S. House Price Index Trends (1975–Present)”, subtitle = “Individual observations with annual averages shown as a line”, x = “Year”, y = “House Price Index” )"
   },
   {
     "objectID": "regional.html",
